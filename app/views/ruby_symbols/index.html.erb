@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ruby Symbols</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sign</th>
+      <th>Name</th>
+      <th>Definition</th>
+      <th>Example</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ruby_symbols.each do |ruby_symbol| %>
+      <tr>
+        <td><%= ruby_symbol.sign %></td>
+        <td><%= ruby_symbol.name %></td>
+        <td><%= ruby_symbol.definition %></td>
+        <td><%= ruby_symbol.example %></td>
+        <td><%= link_to 'Show', ruby_symbol %></td>
+        <td><%= link_to 'Edit', edit_ruby_symbol_path(ruby_symbol) %></td>
+        <td><%= link_to 'Destroy', ruby_symbol, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ruby Symbol', new_ruby_symbol_path %>

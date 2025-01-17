@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sign:</strong>
+  <%= @ruby_symbol.sign %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ruby_symbol.name %>
+</p>
+
+<p>
+  <strong>Definition:</strong>
+  <%= @ruby_symbol.definition %>
+</p>
+
+<p>
+  <strong>Example:</strong>
+  <%= @ruby_symbol.example %>
+</p>
+
+<%= link_to 'Edit', edit_ruby_symbol_path(@ruby_symbol) %> |
+<%= link_to 'Back', ruby_symbols_path %>
