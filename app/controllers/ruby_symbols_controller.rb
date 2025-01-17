@@ -1,5 +1,4 @@
 class RubySymbolsController < ApplicationController
-  before_action :set_ruby_symbol, only: %i[ show edit update destroy ]
 
   # GET /ruby_symbols or /ruby_symbols.json
   def index
@@ -8,6 +7,7 @@ class RubySymbolsController < ApplicationController
 
   # GET /ruby_symbols/1 or /ruby_symbols/1.json
   def show
+    @ruby_symbol = RubySymbol.find(params[:id])
   end
 
   # GET /ruby_symbols/new
@@ -17,6 +17,7 @@ class RubySymbolsController < ApplicationController
 
   # GET /ruby_symbols/1/edit
   def edit
+    @ruby_symbol = RubySymbol.find(params[:id])
   end
 
   # POST /ruby_symbols or /ruby_symbols.json
@@ -36,6 +37,7 @@ class RubySymbolsController < ApplicationController
 
   # PATCH/PUT /ruby_symbols/1 or /ruby_symbols/1.json
   def update
+    @ruby_symbol = RubySymbol.find(params[:id])
     respond_to do |format|
       if @ruby_symbol.update(ruby_symbol_params)
         format.html { redirect_to @ruby_symbol, notice: "Ruby symbol was successfully updated." }
@@ -49,6 +51,7 @@ class RubySymbolsController < ApplicationController
 
   # DELETE /ruby_symbols/1 or /ruby_symbols/1.json
   def destroy
+    @ruby_symbol = RubySymbol.find(params[:id])
     @ruby_symbol.destroy
 
     respond_to do |format|
@@ -58,11 +61,6 @@ class RubySymbolsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_ruby_symbol
-      @ruby_symbol = RubySymbol.find(params[:id])
-    end
-
     # Only allow a list of trusted parameters through.
     def ruby_symbol_params
       params.require(:ruby_symbol).permit(:sign, :name, :definition, :example)
