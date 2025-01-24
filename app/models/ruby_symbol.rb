@@ -1,0 +1,2 @@
+class RubySymbol < ApplicationRecord
+end
