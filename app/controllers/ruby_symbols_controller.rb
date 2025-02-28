@@ -3,6 +3,9 @@ class RubySymbolsController < ApplicationController
   # GET /ruby_symbols or /ruby_symbols.json
   def index
     @ruby_symbols = RubySymbol.all
+    return unless params[:search]
+
+    @ruby_symbols = @ruby_symbols.where(sign: [params[:search]])
   end
 
   # GET /ruby_symbols/1 or /ruby_symbols/1.json
