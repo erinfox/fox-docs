@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Ruby Symbols</h1>
+<h1 class="text-3xl font-bold">Ruby Symbols</h1>
+
+<%= form_with url: ruby_symbols_path, method: :get do |form| %>
+ <%= form.text_field :search  %>
+ <%= form.submit 'Search' %>
+<% end %>
 
 <table>
   <thead>
@@ -31,3 +36,5 @@
 <br>
 
 <%= link_to 'New Ruby Symbol', new_ruby_symbol_path %>
+<br>
+<%= link_to 'See a random symbol', random_symbols_path %>
